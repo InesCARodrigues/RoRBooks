@@ -21,6 +21,8 @@ gem 'font-awesome-sass-rails', '3.0.2.2'
 
 gem 'devise', '3.5.2'
 
+gem 'devise-i18n', '0.12.1'		#Integration of multilanguage support with device
+
 ##########################################
 
 gem 'jquery-rails'
