@@ -19,6 +19,8 @@ gem 'bootstrap-sass', '3.3.5.1'
 
 gem 'font-awesome-sass-rails', '3.0.2.2'
 
+gem 'devise', '3.5.2'
+
 ##########################################
 
 gem 'jquery-rails'
