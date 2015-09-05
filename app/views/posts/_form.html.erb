@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
+		<div class="well">
+			<%= simple_form_for @post do |f| %>
+				<%= f.input :title, label: "Job title:" %>
+				<%= f.input :description %>
+				<%= f.input :autor %>
+				<%= f.button :submit, class: 'btn btn-primary btn-lg btn-block' %>
+			<% end %>
+		</div>
+	</div>	
+</div>
+
+
+

@@ -1,0 +1,8 @@
+<h2> <%= @post.title %> </h2>
+<h3> autor: <%= @post.autor %> </h3>
+<p> description: <%= @post.description %> </p>
+
+<%= link_to "Voltar", root_path	 %>
+<%= link_to "Editar", edit_post_path(@post) %>
+
+<%= link_to "remover", post_path(@post), method: :delete, data: {confirm: "Deseja mesmo remover este anuncio?"} %>
