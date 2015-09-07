@@ -1,3 +1,14 @@
 <h1>Edit Post</h1>
 
-<%= render 'form' %>
+<!-- :html => { :multipart => true} it's needed to use
+the PaperClip gem that will allow us to upload images,etc -->
+
+<%= simple_form_for @post, :html => { :multipart => true} do |f| %>
+	<%= f.select :category_id, @categories
+	%>
+	<%= f.file_field :post_image %>
+	<%= f.input :title, label: "Job title:" %>
+	<%= f.input :description %>
+	<%= f.input :autor %>
+	<%= f.button :submit, class: 'btn btn-primary btn-lg btn-block' %>
+<% end %>

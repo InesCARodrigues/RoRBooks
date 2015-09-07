@@ -15,3 +15,18 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+  $('.homeSlider').slick({
+  	accessibility: false,
+  	autoplay: true,
+  	autoplaySpeed: 3000,
+  	infinite: true,
+  	speed: 300,
+  	slidesToShow: 1,
+  	centerMode: true,
+  	variableWidth: true,
+  	arrows: false
+  });
+});

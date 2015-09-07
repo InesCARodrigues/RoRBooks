@@ -1,0 +1,44 @@
+<!-- START SLIDER -->
+
+<div class="slider-container">
+
+	<div class="homeSlider">
+	  <div><img src="http://placehold.it/940x528"></div>
+	  <div><img src="http://placehold.it/940x528"></div>
+	  <div><img src="http://placehold.it/940x528"></div>
+	</div>
+
+</div>
+
+
+<!-- END SLIDER -->
+<div class="container">
+
+	<div class="row" style="position:relative;margin-top:550px;">
+
+		<h1><%= params[:category] %></h1>
+
+
+		<% if @posts.count == 0 %>
+			<h2>Não existem anuncios nesta categoria :(</h2>
+		<% end %>
+
+		<% @posts.each do |post| %>
+			<div class="col-md-4">
+				
+				<a href="/posts/<%= post.id %>">
+					<%= image_tag post.post_image.url, class: "post-image" %>
+				</a>
+
+			</div>
+			
+		<% end %>
+
+
+	</div>
+
+</div>
+
+
+
+
