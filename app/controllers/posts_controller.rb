@@ -25,6 +25,11 @@ end
 
 
 def show 
+	if @post.reviews.blank?
+		@averageReview = 0
+	else
+		@averageReview = @post.reviews.average(:rating).round(2)
+	end
 end
 
 def create

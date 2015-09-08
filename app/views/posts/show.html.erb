@@ -7,6 +7,9 @@
 	</div>
 	<div class="col-md-6" style="padding-top:50px;">
 		
+		<h3> Classificação </h3>
+		<div class="average-rating" data-score="<%= @averageReview %>"></div>
+		<span>(<%= @post.reviews.count %> reviews)</span>
 		<h3> autor: <%= @post.autor %> </h3>
 		<h3>categoria: <%= @post.category.name %></h3>
 		<p> description: <%= @post.description %> </p>
@@ -18,9 +21,13 @@
 		<!-- Place for the reviews -->
 
 		<%= render @post.reviews %>
-		<div>
+
+		<% if user_signed_in? %>
+			<div>
 			<%= link_to "Add Review", new_post_review_path(@post) %>
-		</div>
+			</div>
+		<% end %>
+
 	</div>
 </div>
 
@@ -37,4 +44,31 @@
 		<%= link_to "remover", post_path(@post), method: :delete, data: {confirm: "Deseja mesmo remover este anuncio?"} %>
 	<% end %>
 <% end %>
+
+
+<script>
+
+	$( document ).ready(function() {
+
+		$(".review-rating").raty({
+			readOnly: true,
+			score: function () {
+				return $(this).attr('data-score');
+			},
+			path: '/assets/'
+		});
+
+
+
+
+		$('.average-rating').raty({
+			readOnly: true,
+			path: '/assets/',
+			score: function() {
+				return $(this).attr('data-score')
+			}
+		});
+	});
+
+</script>
 
